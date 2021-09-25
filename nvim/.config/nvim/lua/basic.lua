@@ -9,8 +9,7 @@ vim.g.smartcase = true
 vim.g.backup = false
 vim.g.undodir = '~/.vim/undodir'
 vim.g.undofile = true
-vim.g.scrolloff = 8
---vim.g.guicursor = true
+--vim.g.scrolloff = 8
 
 vim.wo.number = true
 vim.wo.wrap = false
@@ -45,6 +44,8 @@ vim.cmd [[
     set splitbelow
     set splitright
     set guicursor=
+    set scrolloff=8
+    set wildignore+=**/.git/*
 ]]
 
 local map = vim.api.nvim_set_keymap
@@ -53,3 +54,10 @@ map('n', '<Leader>ff', ':Telescope find_files<CR>', {noremap = true})
 map('n', '<Leader>fb', ':Telescope buffers<CR>', {noremap = true})
 map('n', '<Leader>fg', ':Telescope live_grep<CR>', {noremap = true})
 map('n', '<Leader>fh', ':Telescope help_tags<CR>', {noremap = true})
+
+vim.api.nvim_set_keymap(
+  'n',
+  '<Leader>vrc',
+  "<cmd>lua require('tscope').search_dotfiles()<CR>",
+  {noremap = true}
+)
