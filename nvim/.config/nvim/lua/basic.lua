@@ -40,6 +40,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'mhinz/vim-rfc'
+Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
 
 vim.call('plug#end')
 
@@ -53,5 +54,4 @@ map('n', '<Leader>ff', ':Telescope find_files<CR>', {noremap = true})
 map('n', '<Leader>fb', ':Telescope buffers<CR>', {noremap = true})
 map('n', '<Leader>fg', ':Telescope live_grep<CR>', {noremap = true})
 map('n', '<Leader>fh', ':Telescope help_tags<CR>', {noremap = true})
-
 map('n', '<Leader>vrc', "<cmd>lua require('tscope').search_dotfiles()<CR>", {noremap = true})
