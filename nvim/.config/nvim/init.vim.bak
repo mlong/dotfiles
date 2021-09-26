@@ -1,5 +1,5 @@
 "lua require('basic')
-lua require('init')
+"lua require('init')
 
 filetype plugin indent on
 
@@ -17,7 +17,6 @@ set incsearch
 set ignorecase
 set smartcase
 set shortmess+=I
-set exrc
 set guicursor=
 set autoindent
 set relativenumber
@@ -28,7 +27,6 @@ set undofile
 set signcolumn=yes
 set hidden
 set noerrorbells
-set nu
 set scrolloff=8
 set splitbelow splitright
 
