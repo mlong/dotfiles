@@ -30,6 +30,8 @@ vim.opt.splitbelow=true
 vim.opt.splitright=true
 vim.opt.wildignore = {'*/.git/*'}
 
+vim.o.completeopt = "menu,noselect"
+
 local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.vim/plugged')
 
@@ -41,6 +43,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'mhinz/vim-rfc'
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
+Plug('hrsh7th/nvim-compe')
 
 vim.call('plug#end')
 

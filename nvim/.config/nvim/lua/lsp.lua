@@ -1,5 +1,33 @@
 local nvim_lsp = require('lspconfig')
 
+local function lsp_map(mode, left_side, right_side)
+    vim.api.nvim_buf_set_keymap(0, mode, left_side, right_side, {noremap=true})
+end
+
+local function default_on_attach(client)
+    print('Attaching to ' .. client.name)
+
+    lsp_map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')    
+    lsp_map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')    
+    lsp_map('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>')    
+    lsp_map('n', 'gw', ':lua vim.lsp.buf.document_symbol()<CR>')    
+    lsp_map('n', 'gW', ':lua vim.lsp.buf.workspace_symbol()<CR>')    
+    lsp_map('n', 'gr', ':lua vim.lsp.buf.references()<CR>')    
+    lsp_map('n', 'gt', ':lua vim.lsp.buf.type_definition()<CR>')    
+    lsp_map('n', 'K', ':lua vim.lsp.buf.hover()<CR>')    
+    lsp_map('n', '<c-k>', ':lua vim.lsp.buf.signature_help()<CR>')    
+    lsp_map('n', '<leader>af', ':lua vim.lsp.buf.code_action()<CR>')    
+    lsp_map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>')    
+end
+
+local default_config = {
+    on_attach = default_on_attach,
+}
+
+local pid = vim.fn.getpid()
+local cache_path = vim.fn.stdpath('cache')
+
+
 -- Use an on_attach function to only map the following keys 
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -35,7 +63,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "bashls"}
+local servers = { "pyright", "bashls", "gopls"}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
