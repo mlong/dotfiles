@@ -46,7 +46,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'mhinz/vim-rfc'
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
-Plug 'ziglang/zig.vim'
 
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -58,7 +57,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 vim.call('plug#end')
 
 vim.cmd [[
-    colorscheme gruvbuddy
+    colorscheme gruvbox
 ]]
 
 vim.cmd [[ highlight WinSeparator guibg=None ]]
