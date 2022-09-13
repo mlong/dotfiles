@@ -28,4 +28,3 @@ vim.opt.termguicolors = true
 vim.opt.cmdheight = 1
 
 vim.opt.updatetime = 50
-

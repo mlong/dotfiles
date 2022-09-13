@@ -3,7 +3,6 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("sbdchd/neoformat")
 
-
 	use("nvim-lua/popup.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("nvim-telescope/telescope.nvim")
@@ -15,7 +14,6 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-path")
 	use("L3MON4D3/LuaSnip")
 	use("saadparwaiz1/cmp_luasnip")
-	use("hrsh7th/cmp-path")
 	use("williamboman/nvim-lsp-installer")
 
 	use("mbbill/undotree")
@@ -26,5 +24,7 @@ return require("packer").startup(function(use)
 
 	-- Colour Schemes
 	use("folke/tokyonight.nvim")
+
+    use("kyazdani42/nvim-web-devicons")
+    use { "catppuccin/nvim", as = "catppuccin" }
 end)
- 
