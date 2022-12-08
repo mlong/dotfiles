@@ -104,6 +104,9 @@ vim.o.swapfile = false
 vim.o.cursorcolumn = true
 vim.o.cursorline = true
 
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+
 -- Set colorscheme
 -- catppuccin
 vim.g.catppuccin_flavour = "frappe"  -- latte, frappe, macchiato, mocha
@@ -346,7 +349,8 @@ for _, sign in ipairs(signs) do
 end
 
 -- nvim-cmp supports additional completion capabilities
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+--local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Setup mason so it can manage external tooling
 require('mason').setup()
@@ -415,16 +419,12 @@ require("lspconfig").tsserver.setup {
   }
 }
 
-require("lspconfig").rls.setup {
+require("lspconfig").rust_analyzer.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
-    rust = {
-      unstable_features = true,
-      build_on_save = false,
-      all_features = true,
-    },
-  },
+    ["rust-analyzer"] = {}
+  }
 }
 
 -- nvim-cmp setup
