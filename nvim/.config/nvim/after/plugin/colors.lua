@@ -1,7 +1,7 @@
 function ColorMe(color)
     vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
 
-    color = color or "gruvbox"
+    color = color or "rose-pine-main"
 
     require("catppuccin").setup({
         transparent_background = true,

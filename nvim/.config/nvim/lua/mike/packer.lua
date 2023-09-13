@@ -64,4 +64,6 @@ return require("packer").startup(function(use)
 		}
 	}
 
+    use("tjdevries/ocaml.nvim", {run = ':lua require("ocaml").update()'})
+
 end)

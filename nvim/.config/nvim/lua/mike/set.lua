@@ -34,3 +34,8 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 vim.opt.guifont = { "JetBrainsMono Nerd Font Mono", ":h18" }
+
+vim.opt.listchars = "eol:\\u21b5"
+vim.opt.list = false
+
+vim.opt.autochdir = true
