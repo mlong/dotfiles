@@ -151,10 +151,11 @@ end)
 lsp.setup()
 
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = false,
     signs = true,
     update_in_insert = false,
     underline = true,
     severity_sort = false,
     float = true,
 })
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]

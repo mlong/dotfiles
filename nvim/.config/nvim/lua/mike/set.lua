@@ -39,3 +39,5 @@ vim.opt.listchars = "eol:\\u21b5"
 vim.opt.list = false
 
 vim.opt.autochdir = true
+
+vim.o.updatetime = 250
